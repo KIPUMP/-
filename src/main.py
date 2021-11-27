@@ -210,7 +210,7 @@ if __name__ == "__main__":
     btnorder=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="주문임시", bg="powder blue", command=main_frame_controller.order_button_litener)
     btnorder.grid(row=7, column=4)
 
-    btnstock=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="재고임시", bg="powder blue")
+    btnstock=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="재고임시", bg="powder blue", command=main_frame_controller.stock_button_litener)
     btnstock.grid(row=7, column=5)
 
     def price():

@@ -42,8 +42,11 @@ def open_order_view():
   scroll_bar_y.config(command = treeView.yview )
   scroll_bar_x.config(command = treeView.xview )
 
+#-----------------데이터 넣는 부분-------------------------------------
   list = data.order_list
   for o in list:
     treeView.insert('', 'end', text=o.get_order_num(), values=(o.to_tuple()))
+#---------------------------------------------------------------------    
     
+
   order_root.mainloop()
