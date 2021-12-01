@@ -4,6 +4,7 @@ import time
 import com.oss_project.entity.order as order
 import com.oss_project.controller.main_frame_controller as main_frame_controller
 import data
+import employee_data
 #import qr_code
 
 #엔트리 포인트 지정
@@ -212,6 +213,11 @@ if __name__ == "__main__":
 
     btnstock=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="재고임시", bg="powder blue", command=main_frame_controller.stock_button_litener)
     btnstock.grid(row=7, column=5)
+
+    btnemployee=Button(f1, padx=16, pady=8, bd=10, fg="black", font=('ariel', 16, 'bold'), width=10, text="직원관리",bg="powder blue", command=employee_data.main)
+    btnemployee.grid(row=7, column=6)
+
+
 
     def price():
         roo = Tk()

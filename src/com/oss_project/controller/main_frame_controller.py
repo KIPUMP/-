@@ -12,4 +12,4 @@ def order_button_litener():
   
 def stock_button_litener():
   stock_view.open_stock_view()
-  
+
