@@ -78,13 +78,13 @@ def main():
     btnSelect = Button(editFrame, text="조회", command=selectData)
     btnSelect.pack(side=LEFT, padx=10, pady=10)
 
-    listData1 = Listbox(listFrame, bg='#cccccc')
+    listData1 = Listbox(listFrame, bg='gray')
     listData1.pack(side=LEFT, fill=BOTH, expand=1)
-    listData2 = Listbox(listFrame, bg='#cccccc')
+    listData2 = Listbox(listFrame, bg='gray')
     listData2.pack(side=LEFT, fill=BOTH, expand=1)
-    listData3 = Listbox(listFrame, bg='#cccccc')
+    listData3 = Listbox(listFrame, bg='gray')
     listData3.pack(side=LEFT, fill=BOTH, expand=1)
-    listData4 = Listbox(listFrame, bg='#cccccc')
+    listData4 = Listbox(listFrame, bg='gray')
     listData4.pack(side=LEFT, fill=BOTH, expand=1)
 
     window.mainloop()
