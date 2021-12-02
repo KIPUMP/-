@@ -3,6 +3,11 @@ import random
 import time
 import com.oss_project.entity.order as order
 import com.oss_project.controller.main_frame_controller as main_frame_controller
+<<<<<<< HEAD
+=======
+import data
+import employee_data
+>>>>>>> 18558e3425db893e8e3704a6179d3cc9b70ae116
 #import qr_code
 
 #엔트리 포인트 지정
@@ -242,6 +247,7 @@ if __name__ == "__main__":
     lblTotal = Label(f1,text="---------------------",fg="white")
     lblTotal.grid(row=6,columnspan=3)
     #-----------------------------------------buttons------------------------------------------
+<<<<<<< HEAD
     button_frame = Frame(root, bg="green", width=1600)
     button_frame.pack(side=BOTTOM)
     
@@ -263,5 +269,66 @@ if __name__ == "__main__":
     btnexit=Button(button_frame,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="EXIT", bg="powder blue",command=qexit)
     btnexit.pack(anchor=CENTER, side=LEFT, padx=12)
     
+=======
+    btnTotal=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="TOTAL", bg="powder blue",command=Ref)
+    btnTotal.grid(row=7, column=1)
+
+    btnreset=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="RESET", bg="powder blue",command=reset)
+    btnreset.grid(row=7, column=2)
+
+    btnexit=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="EXIT", bg="powder blue",command=qexit)
+    btnexit.grid(row=7, column=3)
+
+    btnorder=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="주문임시", bg="powder blue", command=main_frame_controller.order_button_litener)
+    btnorder.grid(row=7, column=4)
+
+    btnstock=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="재고임시", bg="powder blue", command=main_frame_controller.stock_button_litener)
+    btnstock.grid(row=7, column=5)
+
+    btnemployee=Button(f1, padx=16, pady=8, bd=10, fg="black", font=('ariel', 16, 'bold'), width=10, text="직원관리",bg="powder blue", command=employee_data.main)
+    btnemployee.grid(row=7, column=6)
+
+
+
+    def price():
+        roo = Tk()
+        roo.geometry("600x220+0+0")
+        roo.title("Price List")
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="ITEM", fg="black", bd=5)
+        lblinfo.grid(row=0, column=0)
+        lblinfo = Label(roo, font=('aria', 15,'bold'), text="_____________", fg="white", anchor=W)
+        lblinfo.grid(row=0, column=2)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="PRICE", fg="black", anchor=W)
+        lblinfo.grid(row=0, column=3)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="Fries Meal", fg="steel blue", anchor=W)
+        lblinfo.grid(row=1, column=0)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="25", fg="steel blue", anchor=W)
+        lblinfo.grid(row=1, column=3)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="Lunch Meal", fg="steel blue", anchor=W)
+        lblinfo.grid(row=2, column=0)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="40", fg="steel blue", anchor=W)
+        lblinfo.grid(row=2, column=3)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="Burger Meal", fg="steel blue", anchor=W)
+        lblinfo.grid(row=3, column=0)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="35", fg="steel blue", anchor=W)
+        lblinfo.grid(row=3, column=3)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="Pizza Meal", fg="steel blue", anchor=W)
+        lblinfo.grid(row=4, column=0)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="50", fg="steel blue", anchor=W)
+        lblinfo.grid(row=4, column=3)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="Cheese Burger", fg="steel blue", anchor=W)
+        lblinfo.grid(row=5, column=0)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="30", fg="steel blue", anchor=W)
+        lblinfo.grid(row=5, column=3)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="Drinks", fg="steel blue", anchor=W)
+        lblinfo.grid(row=6, column=0)
+        lblinfo = Label(roo, font=('aria', 15, 'bold'), text="35", fg="steel blue", anchor=W)
+        lblinfo.grid(row=6, column=3)
+
+        roo.mainloop()
+
+    btnprice=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="PRICE", bg="powder blue",command=price)
+    btnprice.grid(row=7, column=0)
+>>>>>>> 18558e3425db893e8e3704a6179d3cc9b70ae116
 
     root.mainloop()
