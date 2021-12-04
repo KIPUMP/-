@@ -2,13 +2,11 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))))
-
-#재고화면
 import tkinter
 import tkinter.ttk
 import controller.stock_view_controller as controller
 
-
+#재고화면
 def open_stock_view():
   #view 영역에서 새 창만들기 시작
   stock_root = tkinter.Tk()

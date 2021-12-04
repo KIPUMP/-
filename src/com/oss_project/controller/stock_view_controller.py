@@ -1,18 +1,18 @@
 import sqlite3
 from tkinter import messagebox
-
-#모듈 연결용 임시코드
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))))))))
 import database.data as datapath
 
+#재고관리 컨트롤러
+#재고 삽입 버튼 리스너
 def insertbtn_listener(tree_view, name, price, stock):
     con = sqlite3.connect(datapath.path)
     cur = con.cursor()
     print(name, price, stock)
     try:
-        sql = "INSERT INTO product (name, price, stock) values (\'" + name + "\', " + price + ", " + stock + ")"
+        sql = "INSERT INTO stock (name, price, stock) values (\'" + name + "\', " + price + ", " + stock + ")"
         cur.execute(sql)
     except Exception as e:
         messagebox.showerror('오류', '데이터 입력 오류가 발생하였습니다.', parent=tree_view)
@@ -27,11 +27,12 @@ def insertbtn_listener(tree_view, name, price, stock):
     for i in tree_view.get_children():
       tree_view.delete(i)
     selectbtn_controller(tree_view)
-    
+
+#재고 출력 버튼 리스너
 def selectbtn_controller(tree_view):
     con = sqlite3.connect(datapath.path)
     cur = con.cursor()
-    cur.execute("SELECT * FROM product")
+    cur.execute("SELECT * FROM stock")
 
     tuples = []
     while True:

@@ -1,16 +1,20 @@
 import sqlite3
 from tkinter import*
 from tkinter import messagebox
+import sys
 import os
-path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))))))))
+import database.data as datapath
 
+#직원 관리 컨트롤러
 #데이터 베이스 사용하기 위한 메소드
-def insertData():
+#데이터 삽입
+def insertData(edit1, edit2, edit3, edit4):
     con, cur = None, None
     data1, data2, data3, data3 = "", "", "", ""
     sql = ""
 
-    con = sqlite3.connect(path+"/employee.db")
+    con = sqlite3.connect(datapath.path) #여기의 주소에 있는 db파일을 불러온다
     cur = con.cursor()
     data1 = edit1.get();data2 = edit2.get();data3 = edit3.get();data4 = edit4.get()
     try:
@@ -28,9 +32,10 @@ def insertData():
     edit1.delete(0, END);edit2.delete(0, END);edit3.delete(0, END);edit4.delete(0, END)
     selectData()
 
-def selectData():
+#데이터 출력
+def selectData(listData1, listData2, listData3, listData4):
     strData1, strData2, strData3, strData4 = [], [], [], []
-    con = sqlite3.connect(path+"/employee.db")
+    con = sqlite3.connect(datapath.path)
     cur = con.cursor()
     cur.execute("SELECT * FROM employee_data")
 
@@ -54,37 +59,6 @@ def selectData():
         listData4.insert(END, item4)
     con.close()
 
-# 메인
-window = Tk()
-window.geometry("650x400")
-window.title("직원 관리")
+    # 메인
+    
 
-editFrame = Frame(window)
-editFrame.pack()
-listFrame = Frame(window)
-listFrame.pack(side=BOTTOM, fill=BOTH, expand=1)
-
-edit1 = Entry(editFrame, width=10);
-edit1.pack(side=LEFT, padx=10, pady=10)
-edit2 = Entry(editFrame, width=10);
-edit2.pack(side=LEFT, padx=10, pady=10)
-edit3 = Entry(editFrame, width=10);
-edit3.pack(side=LEFT, padx=10, pady=10)
-edit4 = Entry(editFrame, width=10);
-edit4.pack(side=LEFT, padx=10, pady=10)
-
-btnInsert = Button(editFrame, text="입력", command=insertData)
-btnInsert.pack(side=LEFT, fill=BOTH, padx=10, pady=10)
-btnSelect = Button(editFrame, text="조회", command=selectData)
-btnSelect.pack(side=LEFT, padx=10, pady=10)
-
-listData1 = Listbox(listFrame, bg='#cccccc')
-listData1.pack(side=LEFT, fill=BOTH, expand=1)
-listData2 = Listbox(listFrame, bg='#cccccc')
-listData2.pack(side=LEFT, fill=BOTH, expand=1)
-listData3 = Listbox(listFrame, bg='#cccccc')
-listData3.pack(side=LEFT, fill=BOTH, expand=1)
-listData4 = Listbox(listFrame, bg='#cccccc')
-listData4.pack(side=LEFT, fill=BOTH, expand=1)
-
-window.mainloop()
