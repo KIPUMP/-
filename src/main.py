@@ -39,7 +39,6 @@ if __name__=="__main__":
    lblinfo.grid(row=0,column=0)
    lblinfo = Label(Tops, font=( 'aria' ,20, 'bold' ),text=clock(),fg="steel blue",anchor=W)
    lblinfo.grid(row=1,column=0)
-         
    #--------------------------------------------menus--------------------------------------------
    menus = []
    rand = StringVar()
@@ -86,7 +85,6 @@ if __name__=="__main__":
    txtLargefries = Entry(f1,font=('ariel' ,16,'bold'), textvariable=Largefries , bd=6,insertwidth=4,bg="powder blue" ,justify='right')
    txtLargefries.grid(row=2,column=1)
 
-
    lblburger = Label(f1, font=( 'aria' ,16, 'bold' ),text="햄버거",fg="steel blue",bd=10,anchor='w')
    lblburger.grid(row=3,column=0)
    txtburger = Entry(f1,font=('ariel' ,16,'bold'), textvariable=Burger , bd=6,insertwidth=4,bg="powder blue" ,justify='right')
@@ -107,15 +105,15 @@ if __name__=="__main__":
    txtDrinks = Entry(f1,font=('ariel' ,16,'bold'), textvariable=Drinks , bd=6,insertwidth=4,bg="powder blue" ,justify='right')
    txtDrinks.grid(row=0,column=3)
 
-   lblTax = Label(f1, font=( 'aria' ,16, 'bold' ),text="Tax(VAT)",fg="steel blue",bd=10,anchor='w')
+   lblTax = Label(f1, font=( 'aria' ,16, 'bold' ),fg="steel blue",bd=10,anchor='w')
    lblTax.grid(row=1,column=2)
-   txtTax = Entry(f1,font=('ariel' ,16,'bold'), textvariable=Tax , bd=6,insertwidth=4,bg="powder blue" ,justify='right')
-   txtTax.grid(row=1,column=3)
+   #txtTax = Entry(f1,font=('ariel' ,16,'bold'), textvariable=Tax , bg="black", justify='right')
+   #txtTax.grid(row=1,column=3)
 
    lblTotal = Label(f1, font=( 'aria' ,16, 'bold' ),text="Total",fg="steel blue",bd=10,anchor='w')
-   lblTotal.grid(row=2,column=2)
-   txtTotal = Entry(f1,font=('ariel' ,16,'bold'), textvariable=Total , bd=6,insertwidth=10,bg="powder blue" ,justify='right')
-   txtTotal.grid(row=2,column=3)
+   lblTotal.grid(row=1,column=2)
+   txtTotal = Entry(f1,font=('ariel' ,16,'bold'), textvariable=Total, bd=6,insertwidth=10,bg="powder blue" ,justify='right')
+   txtTotal.grid(row=1,column=3)
 
    #lblTotal = Label(f1,text="",fg="white")
    #lblTotal.grid(row=3,columnspan=3)
