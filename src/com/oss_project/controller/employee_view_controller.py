@@ -9,7 +9,7 @@ import database.data as datapath
 #직원 관리 컨트롤러
 #데이터 베이스 사용하기 위한 메소드
 #데이터 삽입
-def insertData(edit1, edit2, edit3, edit4):
+def insertData(window, edit1, edit2, edit3, edit4):
     con, cur = None, None
     data1, data2, data3, data3 = "", "", "", ""
     sql = ""
@@ -21,16 +21,12 @@ def insertData(edit1, edit2, edit3, edit4):
         sql = "insert into employee_data (id,name,department,start_work) values ('" + data1 + "','" + data2 + "','" + data3 + "'," + data4 + ")"
         cur.execute(sql)
     except:
-        messagebox.showerror('오류', '데이터 입력 오류가 발생하였습니다.')
+        messagebox.showerror('오류', '데이터 입력 오류가 발생하였습니다.', parent=window)
     else:
-        messagebox.showinfo('성공', '데이터 입력 성공')
+        messagebox.showinfo('성공', '데이터 입력 성공', parent=window)
 
     con.commit()
     con.close()
-
-    # 기존에 입력한 입력 박스값 내용삭제
-    edit1.delete(0, END);edit2.delete(0, END);edit3.delete(0, END);edit4.delete(0, END)
-    selectData()
 
 #데이터 출력
 def selectData(listData1, listData2, listData3, listData4):

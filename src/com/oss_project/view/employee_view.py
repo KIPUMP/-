@@ -26,7 +26,7 @@ def open_employee_view():
   edit4 = Entry(editFrame, width=10);
   edit4.pack(side=LEFT, padx=10, pady=10)
 
-  btnInsert = Button(editFrame, text="입력", command= lambda:employee_view_controller.insertData(edit1, edit2, edit3, edit4))
+  btnInsert = Button(editFrame, text="입력", command= lambda:employee_view_controller.insertData(window, edit1, edit2, edit3, edit4))
   btnInsert.pack(side=LEFT, fill=BOTH, padx=10, pady=10)
   btnSelect = Button(editFrame, text="조회", command= lambda:employee_view_controller.selectData(listData1, listData2, listData3, listData4))
   btnSelect.pack(side=LEFT, padx=10, pady=10)
