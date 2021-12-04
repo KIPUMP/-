@@ -72,6 +72,7 @@ def open_order_view():
         before_id = id
       else:
         treeView.insert('', 'end', text= id, values=(detail+ "*" + str(num), price*num, time))
+
   con.close()
   treeView.update()
   #--------------------------------------------------------------------------------------------------------------------
