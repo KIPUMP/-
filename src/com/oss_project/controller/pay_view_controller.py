@@ -7,6 +7,7 @@ from tkinter import messagebox
 import sqlite3
 from tkinter import *
 from tkinter import Tk
+import tkinter
 
 #현금 결제
 def cash_button_listener(root_view):
@@ -21,16 +22,19 @@ def cash_button_listener(root_view):
 def qr_button_listener(root_view):
   w = Tk()
   w.title("kakao_pay")
-  w.geometry("400x400")
+  w.geometry("500x500")
+  w.resizable(True,True)
+  
   
   btncancel = Button(w,text = "QR 결제 성공",fg = "white", bg = "blue" ,padx=20,pady=8, bd=10, command=lambda: query(root_view))
-  btncancel.pack(side=BOTTOM)
+  btncancel.pack(side = BOTTOM)
   btncancel = Button(w,text = "QR 결제 취소",fg = "white", bg = "blue" ,padx=20,pady=8, bd=10)
-  btncancel.pack(side=BOTTOM)
+  btncancel.pack(side = BOTTOM)
   
-  photo = PhotoImage(file= "\\KakaoTalk_20211203_120653882.gif",master=w)
+  photo = tkinter.PhotoImage(file= "src\com\oss_project\controller\kakaopay.gif",master=w)
   pLabel = Label(w, image = photo)
   pLabel.pack()
+
   w.mainloop()
   
 #주문시 데이터베이스에 쿼리문 실행
