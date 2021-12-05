@@ -28,7 +28,7 @@ def qr_button_listener(root_view):
   btncancel = Button(w,text = "QR 결제 취소",fg = "white", bg = "blue" ,padx=20,pady=8, bd=10)
   btncancel.pack(side=BOTTOM)
   
-  photo = PhotoImage(file= "\\KakaoTalk_20211203_120653882.gif",master=w)
+  photo = PhotoImage(file= "/KakaoTalk_20211203_120653882",master=w)
   pLabel = Label(w, image = photo)
   pLabel.pack()
   w.mainloop()
