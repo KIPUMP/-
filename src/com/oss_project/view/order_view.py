@@ -6,6 +6,7 @@ import tkinter
 import tkinter.ttk
 import sqlite3
 import database.data as datapath
+from tkinter import messagebox
 
 #주문화면
 def open_order_view():
@@ -43,11 +44,14 @@ def open_order_view():
   scroll_bar_x.config(command = treeView.xview ) 
   
   #값 삽입------------------------------------------------------------------------------------------------------------
-  con = sqlite3.connect(datapath.path)
-  cur = con.cursor()
-  cur.execute("""select o.id, p.product_name, p.num, p.unit_price, o.purchase_time from "order" o
-    left join "ordered_product" p on o.ID = p.order_id
-    order by o.id;""")
+  try:
+    con = sqlite3.connect(datapath.path)
+    cur = con.cursor()
+    cur.execute("""select o.id, p.product_name, p.num, p.unit_price, o.purchase_time from "order" o
+      left join "ordered_product" p on o.ID = p.order_id
+      order by o.id;""")
+  except:
+      messagebox.showerror('오류', '데이터 오류가 발생하였습니다.', parent=order_root)
 
   tuples = []
   while True:
@@ -68,6 +72,7 @@ def open_order_view():
         before_id = id
       else:
         treeView.insert('', 'end', text= id, values=(detail+ "*" + str(num), price*num, time))
+
   con.close()
   treeView.update()
   #--------------------------------------------------------------------------------------------------------------------
