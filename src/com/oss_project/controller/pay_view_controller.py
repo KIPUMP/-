@@ -48,7 +48,11 @@ def query(root_view):
         messagebox.showerror('오류', '데이터 입력 오류가 발생하였습니다.', parent=root_view)
         print(e)
     else:
+        data.OrderInfo.total_order_id = None
+        data.OrderInfo.total_ordered_product_list = []
+        data.OrderInfo.total_sum = None
         messagebox.showinfo('성공', '데이터 입력 성공', parent=root_view)
+        
 
     con.commit()
     con.close()

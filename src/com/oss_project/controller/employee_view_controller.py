@@ -54,7 +54,3 @@ def selectData(listData1, listData2, listData3, listData4):
         listData3.insert(END, item3)
         listData4.insert(END, item4)
     con.close()
-
-    # 메인
-    
-
