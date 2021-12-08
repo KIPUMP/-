@@ -35,12 +35,12 @@ def open_stock_view():
 
 
   #Treeview 생성 및 초기 설정
-  treeView = tkinter.ttk.Treeview(stock_root, columns=["상품명", "가격", "개수"], xscrollcommand=scroll_bar_x.set, yscrollcommand=scroll_bar_y.set)
+  treeView = tkinter.ttk.Treeview(stock_root, columns=["재료명", "가격", "개수"], xscrollcommand=scroll_bar_x.set, yscrollcommand=scroll_bar_y.set)
   treeView.column("#0", width=70)
   treeView.heading("#0", text="순번", anchor="center")
 
-  treeView.column("상품명", width=100, anchor="center")
-  treeView.heading("상품명", text="상품명", anchor="center")
+  treeView.column("재료명", width=100, anchor="center")
+  treeView.heading("재료명", text="재료명", anchor="center")
 
   treeView.column("가격", width=100, anchor="center")
   treeView.heading("가격", text="가격", anchor="center")

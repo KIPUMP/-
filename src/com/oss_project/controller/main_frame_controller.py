@@ -17,7 +17,7 @@ from tkinter import messagebox
 #manage 버튼
 def manage_button_litener():
   manage_view.open_manage_view()
-  
+   
 #pay 버튼
 def pay_button_listener():
   if data.OrderInfo.total_order_id == None:
