@@ -1,4 +1,4 @@
-# Restaurant-Management-System-Python-
+# 혁신적인 매장 운영을 위한 POS 시스템
 
 2021년 2학기 공개 소프트웨어 과목 프로젝트입니다. 이전 몇몇 버전에서는 삭제된 .gif 파일로 인해 에러가 발생할 수 있습니다.
 
@@ -6,9 +6,8 @@
 
 기존에 Github에 개재 되어 있던(https://github.com/amark23/Restaurant-Management-System-Python-) 코드를 수정하여 가게의 현금 거래를 관리하는 POS(point to sale) 시스템과 물건이 팔렸을 때 물건의 재고를 최신화 시켜주는 관리 시스템 입니다. 
 
-![스크린샷 2024-07-11 121113.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cf8fc2f2-8a83-409e-a156-5a8a2b80c01e/21edefb9-32ac-40b0-b51a-388b448e9ab6/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2024-07-11_121113.png)
-
-![스크린샷 2024-07-11 121125.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cf8fc2f2-8a83-409e-a156-5a8a2b80c01e/95669e6c-e9eb-45f6-ae6b-51d2e45eb768/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2024-07-11_121125.png)
+![스크린샷 2024-07-11 121113](https://github.com/KIPUMP/resturant_project_opensoftware/assets/86760876/edec4131-03ab-4090-89cc-492d9f03c760)
+![스크린샷 2024-07-11 121125](https://github.com/KIPUMP/resturant_project_opensoftware/assets/86760876/702a7b05-2119-4bbd-b50b-ee4d81e45a96)
 
 ### **담당 업무**
 
